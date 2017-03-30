@@ -1,3 +1,22 @@
-<h1>
-  {{title}}
-</h1>
+<header>
+  <form>
+    <span>City:<input [(ngModel)]="newForcast.cityName" (keyup.enter)="addForcast()" name="test"/></span>
+  </form>
+</header>
+
+<section>
+
+  <div *ngFor="let forcast of forcasts">{{forcast.cityName}}</div>
+  <table>
+    <thead>
+      <tr>
+        <th>City Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let forcast of forcasts">
+        <td><span>{{forcast.cityName}}</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
